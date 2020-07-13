@@ -1,3 +1,4 @@
+
 if(window.location.hash) {
     var hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
     const experiences = [
@@ -132,9 +133,9 @@ if(window.location.hash) {
             break;
         }
     }
-    
-    if(count > 0){
-        var experience = experiences[position];
+
+    function display(pos){
+        var experience = experiences[pos];
         document.querySelector(".single-blog-image").innerHTML=`<img class="radius" src="img/experiences/${experience.img}" alt="">`;
         document.querySelector(".single-blog-title").innerHTML=`${experience.post}`;
         document.querySelector(".date").innerHTML = `${experience.date}`;
@@ -144,13 +145,12 @@ if(window.location.hash) {
             taf += `<li><a href="#">${experience.taf[j]}</a></li>`;
         }
         document.querySelector(".categories .top_30").innerHTML = taf;
-
         var other = "";
         for(var k = 0; k<experiences.length; k++){
             if (experiences[k].title !== hash){
                other += `
                         <li>
-                            <a onclick="window.location.reload(true);" href="single-experiences.html#${experiences[k].title}">
+                            <a onclick="display(${k})" href="single-experiences.html#${experiences[k].title}">
                                 <h4 class="title">${experiences[k].post}</h4>
                                 <span>${experiences[k].date}</span>
                             </a>
@@ -159,6 +159,10 @@ if(window.location.hash) {
             }
         }
         document.querySelector(".recent-post .top_15").innerHTML = other;
+    }
+    
+    if(count > 0){
+        display(position);
     } else {
       window.location.href="experiences.html"
     }
