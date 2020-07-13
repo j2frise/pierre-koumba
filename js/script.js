@@ -150,7 +150,7 @@ if(window.location.hash) {
             if (experiences[k].title !== hash){
                other += `
                         <li>
-                            <a href="single-experiences.html#${experiences[k].title}">
+                            <a onclick="window.location.reload(true);" href="single-experiences.html#${experiences[k].title}">
                                 <h4 class="title">${experiences[k].post}</h4>
                                 <span>${experiences[k].date}</span>
                             </a>
