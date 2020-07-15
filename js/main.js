@@ -175,11 +175,11 @@ $(document).ready( function() {
 
     
     // MAGNIFIC POPUP FOR PORTFOLIO PAGE
-    $('.link').magnificPopup({
+    /*$('.link').magnificPopup({
         type:'image',
         gallery:{enabled:true},
         zoom:{enabled: true, duration: 300}
-    });
+    });*/
 
     // LIGHTBOX VIDEO
     $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({

@@ -179,7 +179,7 @@ p{
 
 header{
     display: none;
-    padding: 30px 0;
+    padding: 20px 0;
     position: fixed;
     z-index: 10;
     width: 100%;
@@ -192,6 +192,7 @@ header{
 header.subpage{
     display: block;
     position: relative;
+    padding-bottom: 40px;
 }
 
 header logo{
